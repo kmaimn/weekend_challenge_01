@@ -33,7 +33,7 @@
           <br>
 
           <label for="salary">Yearly Salary:</label>
-          <input ng-model="salary" type="text" id="salary" name="salary"/>
+          <input ng-model="salary" type="number" id="salary" name="salary"/>
           <br>
 
           <button ng-click="storeInfo()" class="submit">Submit</button>
@@ -46,6 +46,6 @@
           <h3 class="name">{{employee.firstname}} {{employee.lastname}} (ID#: {{employee.empid}})   |   Job Title: {{employee.jobtitle}}   |   Yearly Salary: {{employee.salary | currency}}</h3>
         </div>
     </div>
-    
+
   </body>
 </html>
