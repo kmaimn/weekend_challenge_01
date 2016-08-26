@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Information</title>
+    <script type="text/javascript" src="../vendors/angular.min.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/controllers/infoController.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css"/>
+  </head>
+
+  <body ng-app="myApp">
+    <h1>Employee Data</h1>
+
+    <div ng-controller="infoController">
+      <h3 class=>Monthly Salary Total: <span>{{monthlyTotal() | currency}}</span></h3>
+        <p>Please complete the following fields:</p>
+
+        <form id="employeeinfo">
+          <label for="firstname">First Name:</label>
+          <input ng-model="firstname" type="text" id="firstname" name="firstname"/>
+
+          <label for="lastname">Last Name:</label>
+          <input ng-model="lastname" type="text" id="lastname" name="lastname"/>
+          <br>
+
+          <label for="empid">Employee ID #:</label>
+          <input ng-model="empid" type="text" id="empid" name="empid"/>
+          <br>
+
+          <label for="jobtitle">Job Title:</label>
+          <input ng-model="jobtitle" type="text" id="jobtitle" name="jobtitle"/>
+          <br>
+
+          <label for="salary">Yearly Salary:</label>
+          <input ng-model="salary" type="text" id="salary" name="salary"/>
+          <br>
+
+          <button ng-click="storeInfo()" class="submit">Submit</button>
+        </form>
+
+      <div id="container">
+        <h2 class="stored">Stored Employee Information</h2>
+        <div class="empInfo" ng-repeat="employee in employees" ng-init="monthlyTotal=0">
+          <button ng-click="deleteEmp($index)" class="deleteEmp">Remove</button>
+          <h3 class="name">{{employee.firstname}} {{employee.lastname}} (ID#: {{employee.empid}})   |   Job Title: {{employee.jobtitle}}   |   Yearly Salary: {{employee.salary | currency}}</h3>
+        </div>
+    </div>
+    
+  </body>
+</html>
