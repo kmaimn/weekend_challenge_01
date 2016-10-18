@@ -15,6 +15,6 @@ Finally, your logic should calculate all of the employee salaries and report bac
 
 ### Master Branch - jQuery
 
-### Angular Branch
+### Angular Branch - AngularJS
 Convert Weekend 1 Challenge to Angular
 Your task is to take your completed Weekend 1 Challenge and convert the app to use Angular instead of jQuery. 
